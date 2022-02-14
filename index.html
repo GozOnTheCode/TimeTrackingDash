@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <script defer src="./js/app.js"></script>
+    <title>Frontend Mentor | Time tracking dashboard</title>
+    <link rel="stylesheet" href="./css/style.css" type="text/css" />
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- CONTAINER -->
+    <section class="container">
+      <!-- OWNER CONTAINER -->
+      <section class="owner-container">
+        <!-- Owner -->
+        <div class="owner">
+          <img src="./images/image-jeremy.png" alt="owner avatar" />
+          <div class="owner-info">
+            <p>Report for</p>
+            <h1>Jeremy Robson</h1>
+          </div>
+        </div>
+        <div class="owner-btns">
+          <button class="btn" data-option="daily">Daily</button>
+          <button class="btn" data-option="weekly">Weekly</button>
+          <button class="btn" data-option="monthly">Monthly</button>
+        </div>
+        <!-- End of Owner -->
+      </section>
+      <!-- END OF OWNER CONTAINER -->
+      <section class="tabs"></section>
+    </section>
+    <!-- END OF CONTAINER -->
+  </body>
+</html>

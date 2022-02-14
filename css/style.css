@@ -1,0 +1,342 @@
+/*
+---------------------------------------------------
+---------------------------------------------------
+---------------- UNIVERSAL STYLES -----------------
+---------------------------------------------------
+---------------------------------------------------
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Fonts */
+
+  --rubik: "Rubik", sans-serif; /* 300, 400, 500 */
+  --tab-titles: 18px;
+
+  /* Colors */
+
+  --blue: hsl(246, 80%, 60%);
+  --very-dark-blue: hsl(226, 43%, 10%);
+  --dark-blue: hsl(235, 46%, 20%);
+  --desaturated-blue: hsl(235, 45%, 61%);
+  --pale-blue: hsl(236, 100%, 87%);
+  --soft-blue: hsl(195, 74%, 62%); /* play */
+  --lime-green: hsl(145, 58%, 55%); /* excercise */
+  --soft-orange: hsl(43, 84%, 65%); /* self care */
+  --violet: hsl(264, 64%, 52%); /* social */
+  --light-red: hsl(348, 100%, 68%); /* study */
+  --soft-red: hsl(15, 100%, 70%); /* work */
+  font-size: 16px;
+  background: var(--very-dark-blue);
+  color: white;
+  font-family: var(--rubik);
+  min-height: 100vh;
+  max-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  background: transparent;
+  outline: transparent;
+  border: transparent;
+  color: var(--desaturated-blue);
+  font-family: var(--rubik);
+}
+
+/*
+---------------------------------------------------
+---------------------------------------------------
+--------------------- CONTAINER -------------------
+---------------------------------------------------
+---------------------------------------------------
+*/
+
+.container {
+  display: grid;
+  place-content: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: minmax(160px, 203px);
+  gap: 20px;
+  padding: 25px 0;
+}
+
+/*
+---------------------------------------------------
+---------------------------------------------------
+--------------- OWNER CONTAINER -------------------
+---------------------------------------------------
+---------------------------------------------------
+*/
+
+.owner-container {
+  width: 100%;
+  height: 203px;
+  background: var(--dark-blue);
+  border-radius: 15px;
+  margin: auto;
+}
+
+.owner {
+  background: var(--blue);
+  height: 133px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.owner h1 {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.owner p {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--pale-blue);
+}
+
+.owner img {
+  width: 64px;
+  height: 64px;
+  border: 3px solid white;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.owner-btns {
+  height: 70px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.btn:is(:hover, .active) {
+  color: white;
+  cursor: pointer;
+}
+
+.dots:hover {
+  cursor: pointer;
+}
+
+.tab:hover > .tab-info {
+  background-color: var(--desaturated-blue);
+}
+
+/*
+---------------------------------------------------
+---------------------------------------------------
+---------------------- TABS -----------------------
+---------------------------------------------------
+---------------------------------------------------
+*/
+
+.tabs {
+  display: grid;
+  place-items: center;
+  gap: 20px;
+}
+
+.tab {
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.work {
+  background: var(--soft-red);
+}
+
+.play {
+  background-color: var(--soft-blue);
+}
+
+.study {
+  background: var(--light-red);
+}
+
+.exercise {
+  background: var(--lime-green);
+}
+
+.social {
+  background: var(--violet);
+}
+
+.self-care {
+  background: var(--soft-orange);
+}
+
+.tab-header {
+  height: 38px;
+  overflow: hidden;
+}
+
+.tab-header img {
+  float: right;
+  transform: translate(-15px, -15px);
+}
+
+.tab-info {
+  background: var(--dark-blue);
+  height: 122px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  gap: 5px;
+}
+
+.upper,
+.center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.upper h3 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.center h2 {
+  font-size: 32px;
+  font-weight: 300;
+}
+
+.previous p {
+  color: var(--pale-blue);
+  font-size: 15px;
+  font-weight: 400;
+}
+
+@media screen and (min-width: 426px) and (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .owner-container {
+    width: 90%;
+  }
+
+  .tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .tab {
+    width: 43%;
+  }
+
+  .center {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .container {
+    display: flex;
+    margin-left: 5%;
+    max-width: 1200px;
+  }
+
+  .owner-container {
+    width: 100%;
+    max-width: 255px;
+    height: 518px;
+  }
+
+  .owner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 37px 32px;
+    height: 70%;
+  }
+
+  .owner img {
+    width: 78px;
+    height: 78px;
+    margin-bottom: 43px;
+  }
+
+  .owner-info h1 {
+    font-size: 40px;
+  }
+
+  .owner-info p {
+    margin-bottom: 7px;
+  }
+
+  .owner-btns {
+    display: flex;
+    flex-direction: column;
+    height: 164px;
+    align-items: flex-start;
+    padding: 20px 32px;
+    gap: 5px;
+  }
+
+  .tabs {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .tab {
+    width: 200px;
+    max-width: 255px;
+  }
+
+  .tab-info {
+    height: 100%;
+    gap: 3px;
+  }
+
+  .center {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 963px) {
+  .container {
+    margin: auto 2.5%;
+  }
+
+  .tab {
+    height: 244px;
+  }
+
+  .center h2 {
+    font-size: 56px;
+  }
+
+  .tab-info {
+    padding: 42px 24px;
+    gap: 10px;
+  }
+}
+
+@media screen and (min-width: 1137px) {
+  .tab {
+    width: 255px;
+  }
+}
